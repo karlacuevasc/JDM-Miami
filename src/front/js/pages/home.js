@@ -1,24 +1,34 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
+import { NavBar } from "../component/navbar";
+import { Jumbo } from "../component/jumbotron";
+import Container from "react-bootstrap/Container";
+import { HomeCards } from "../component/cards";
 import "../../styles/home.scss";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
+	const theCards = () => {
+		let cards = [];
+		let card = (
+			<Container className="col">
+				<HomeCards />
+			</Container>
+		);
+
+		for (let i = 0; i < 3; i++) {
+			cards.push(card);
+		}
+
+		return cards;
+	};
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
-		</div>
+		<Container>
+			<NavBar />
+			<Jumbo />
+			<Container className="row">{theCards()}</Container>
+		</Container>
 	);
 };
