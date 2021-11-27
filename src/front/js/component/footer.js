@@ -1,8 +1,25 @@
 import React, { Component } from "react";
-import "/workspace/The-World-of-JDM/src/front/styles/footer.scss";
+import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
+import { Col, Row } from "react-bootstrap";
+import "/workspace/JDM-Miami/src/front/styles/footer.scss";
 
 export const Footer = () => (
-	<footer className="footer bg-light mt-auto py-3 text-center">
-		<p>Footer</p>
-	</footer>
+	<Container className="footerParent">
+		<div className="footerBackground">
+			<div className="text-white-small">
+				<Row>
+					<Col sm={4} />
+					<Col sm={4} />
+					<Col sm={4} className="footerCompanySection">
+						{/* <div>
+							<Link className="aboutuslink" to="/about">
+								<h5 className="about">About</h5>
+							</Link>
+						</div> */}
+					</Col>
+				</Row>
+			</div>
+		</div>
+	</Container>
 );

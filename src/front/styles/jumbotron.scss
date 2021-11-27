@@ -1,7 +1,36 @@
-.background{
-
-    background-image: url("../img/skylineR33.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-}
+.banner{
+    background: linear-gradient(217deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.555) 70.71%),
+    url("../img/skylineR33.jpg");
+      // background-image: url("../img/Abbracci.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 8in;
+      border-radius: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .jumboTitle{
+  font-size: 4rem;
+  color: white;
+  text-align: center;
+  margin: auto;
+  
+  }
+  
+  .l-image{
+    text-align: center;
+    margin-top: 50vh;
+    transform: translate(-15vw,-50%);
+  }
+  
+  @media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+    .l-image{
+      transform: translate(0vw,-50%);
+    }
+  }

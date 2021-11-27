@@ -3,32 +3,21 @@ import { Context } from "../store/appContext";
 import { NavBar } from "../component/navbar";
 import { Jumbo } from "../component/jumbotron";
 import Container from "react-bootstrap/Container";
+import { Footer } from "../component/footer";
+import { Categories } from "../component/categories";
 import { HomeCards } from "../component/cards";
+import { Input } from "../component/input-field";
 import "../../styles/home.scss";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-
-	const theCards = () => {
-		let cards = [];
-		let card = (
-			<Container className="col">
-				<HomeCards />
-			</Container>
-		);
-
-		for (let i = 0; i < 3; i++) {
-			cards.push(card);
-		}
-
-		return cards;
-	};
-
 	return (
-		<Container>
+		<div>
 			<NavBar />
 			<Jumbo />
-			<Container className="row">{theCards()}</Container>
-		</Container>
+			<Input />
+			<Categories />
+			<Footer />
+		</div>
 	);
 };
