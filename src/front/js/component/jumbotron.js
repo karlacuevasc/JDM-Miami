@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "/workspace/JDM-Miami/src/front/styles/jumbotron.scss";
+import "/workspace/JDM-Website-Info/src/front/styles/jumbotron.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Skyline from "/workspace/JDM-Miami/src/front/img/skylineR33.jpg";
-import Nissan from "/workspace/JDM-Miami/src/front/img/nissan.jpeg";
-import Supra from "/workspace/JDM-Miami/src/front/img/supra.jpeg";
+import Skyline from "/workspace/JDM-Website-Info/src/front/img/skylineR33.jpg";
+import Nissan from "/workspace/JDM-Website-Info/src/front/img/nissan.jpeg";
+import Supra from "/workspace/JDM-Website-Info/src/front/img/supra.jpeg";
 import Carousel from "react-bootstrap/Carousel";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap";
