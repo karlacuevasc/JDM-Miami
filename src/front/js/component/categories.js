@@ -5,7 +5,6 @@ import Row from "react-bootstrap/Row";
 import { JdmApi } from "../api";
 import useSWR from "swr";
 import "/Users/karlacuevas/Documents/JDM-Website-Info/src/front/styles/categories.scss";
-import "/workspace/JDM-Website-Info/src/front/styles/categories.scss";
 
 export function Categories() {
 	const { data, isValidating } = useSWR("/carlist", JdmApi);
