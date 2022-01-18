@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { NavBar } from "../component/navbar";
 import { Jumbo } from "../component/jumbotron";
@@ -7,10 +7,10 @@ import { Footer } from "../component/footer";
 import { Categories } from "../component/categories";
 import { HomeCards } from "../component/cards";
 import { Input } from "../component/input-field";
+
 import "../../styles/home.scss";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
 	return (
 		<div>
 			<NavBar />

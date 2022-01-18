@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
-import "/workspace/JDM-Miami/src/front/styles/footer.scss";
+import "/Users/karlacuevas/Documents/JDM-Website-Info/src/front/styles/footer.scss";
 
 export const Footer = () => (
 	<Container className="footerParent">

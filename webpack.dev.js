@@ -5,6 +5,7 @@ const PrettierPlugin = require("prettier-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 
+
 const port = 3000;
 let publicUrl = `http://localhost:${port}`;
 if(process.env.GITPOD_WORKSPACE_URL){
@@ -34,7 +35,8 @@ module.exports = merge(common, {
             extensions: [ ".js", ".jsx" ],
             jsxBracketSameLine: true,
             semi: true,                 // Print semicolons at the ends of statements.
-            encoding: 'utf-8'           // Which encoding scheme to use on files
+            encoding: 'utf-8'
+                      // Which encoding scheme to use on files
         }),
         new webpack.HotModuleReplacementPlugin()
     ]

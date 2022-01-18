@@ -2,9 +2,34 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import "/workspace/JDM-Miami/src/front/styles/categories.scss";
+import { JdmApi } from "../api";
+import useSWR from "swr";
+import "/Users/karlacuevas/Documents/JDM-Website-Info/src/front/styles/categories.scss";
 
 export function Categories() {
+	const { data, isValidating } = useSWR("/carlist", JdmApi);
+
+	let theCarData =
+		data &&
+		data.results.map((item, index) => {
+			return (
+				<Container key={index}>
+					<h1 className="categoryTitle">{item.make}</h1>
+					<h1 className="categoryTitle">{item.model}</h1>
+					<h1 className="categoryTitle">{item.year}</h1>
+					<img src={item.image} style={{ maxHeight: "500px" }} />
+				</Container>
+			);
+		});
+
+	let mazda = () => {
+		if (data.results === "Mazda") {
+			// return <h1 className="categoryTitle">{data.results}</h1>;
+			console.log(data.results);
+		} else {
+		}
+	};
+
 	return (
 		<Col>
 			<Row>
@@ -14,34 +39,89 @@ export function Categories() {
 			</Row>
 			<Row>
 				<Container className="byAlphabet">
-					<h5># </h5>
-					<h5>A</h5>
-					<h5>B </h5>
-					<h5>C</h5>
-					<h5>D</h5>
-					<h5>E</h5>
-					<h5>F</h5>
-					<h5>G</h5>
-					<h5>H</h5>
-					<h5>I</h5>
-					<h5>J</h5>
-					<h5>K</h5>
-					<h5>L</h5>
-					<h5>M</h5>
-					<h5>N</h5>
-					<h5>O</h5>
-					<h5>P</h5>
-					<h5>Q</h5>
-					<h5>R</h5>
-					<h5>S</h5>
-					<h5>T</h5>
-					<h5>U</h5>
-					<h5>V</h5>
-					<h5>W</h5>
-					<h5>X</h5>
-					<h5>Y</h5>
-					<h5>Z</h5>
+					<h5>
+						<a href="#">#</a>{" "}
+					</h5>
+					<h5>
+						<a href="#">A</a>
+					</h5>
+					<h5>
+						<a href="#">B</a>
+					</h5>
+					<h5>
+						<a href="#">C</a>
+					</h5>
+					<h5>
+						<a href="#">D</a>
+					</h5>
+					<h5>
+						<a href="#">E</a>
+					</h5>
+					<h5>
+						<a href="#">F</a>
+					</h5>
+					<h5>
+						<a href="#">G</a>
+					</h5>
+					<h5>
+						<a href="#">H</a>
+					</h5>
+					<h5>
+						<a href="#">I</a>
+					</h5>
+					<h5>
+						<a href="#">J</a>
+					</h5>
+					<h5>
+						<a href="#">K</a>
+					</h5>
+					<h5>
+						<a href="#">L</a>
+					</h5>
+					<h5>
+						<a href="#">M</a>
+					</h5>
+					<h5>
+						<a href="#">N</a>
+					</h5>
+					<h5>
+						<a href="#">O</a>
+					</h5>
+					<h5>
+						<a href="#">P</a>
+					</h5>
+					<h5>
+						<a href="#">Q</a>
+					</h5>
+					<h5>
+						<a href="#">R</a>
+					</h5>
+					<h5>
+						<a href="#">S</a>
+					</h5>
+					<h5>
+						<a href="#">T</a>
+					</h5>
+					<h5>
+						<a href="#">U</a>
+					</h5>
+					<h5>
+						<a href="#">V</a>
+					</h5>
+					<h5>
+						<a href="#">W</a>
+					</h5>
+					<h5>
+						<a href="#">X</a>
+					</h5>
+					<h5>
+						<a href="#">Y</a>
+					</h5>
+					<h5>
+						<a href="#">Z</a>
+					</h5>
 				</Container>
+				{theCarData}
 			</Row>
 		</Col>
 	);
