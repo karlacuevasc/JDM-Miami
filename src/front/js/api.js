@@ -8,7 +8,7 @@ export async function JdmApi(path) {
 
 	if (response.status === 200) {
 		const payload = await response.json();
-		console.log(JSON.stringify(payload));
+		// console.log(JSON.stringify(payload));
 		return payload;
 	}
 	throw new Error();
