@@ -6,6 +6,8 @@ import { JdmApi } from "../api";
 import useSWR from "swr";
 import "/Users/karlacuevas/Documents/JDM-Website-Info/src/front/styles/categories.scss";
 import { useParams } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 export function Categories() {
 	const { data, isValidating } = useSWR("/carlist", JdmApi);
@@ -26,11 +28,18 @@ export function Categories() {
 
 	let theCarData = carFilter.map((item, index) => {
 		return (
-			<Container key={index}>
-				<h1 className="categoryTitle">{item.make}</h1>
-				<h1 className="categoryTitle">{item.model}</h1>
-				<h1 className="categoryTitle">{item.year}</h1>
-				<img src={item.image} style={{ maxHeight: "500px" }} />
+			<Container key={index} style={{ flexDirection: "row" }}>
+				<Card style={{ width: "18rem" }}>
+					<Card.Img variant="top" src={item.image} />
+					<Card.Body>
+						<Card.Title>{item.make}</Card.Title>
+						<Card.Text>
+							{item.model}
+							{item.year}
+						</Card.Text>
+						<Button variant="primary">Go somewhere</Button>
+					</Card.Body>
+				</Card>
 			</Container>
 		);
 	});
