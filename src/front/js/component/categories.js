@@ -28,7 +28,7 @@ export function Categories() {
 
 	let theCarData = carFilter.map((item, index) => {
 		return (
-			<Col sm={6} key={index}>
+			<Col className="d-flex justify-content-center" sm={4} key={index}>
 				<Card style={{ width: "18rem" }}>
 					<Card.Img variant="top" src={item.image} />
 					<Card.Body>
