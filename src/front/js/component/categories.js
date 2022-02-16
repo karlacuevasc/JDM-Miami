@@ -28,7 +28,7 @@ export function Categories() {
 
 	let theCarData = carFilter.map((item, index) => {
 		return (
-			<Container key={index} style={{ flexDirection: "row" }}>
+			<Col sm={6} key={index}>
 				<Card style={{ width: "18rem" }}>
 					<Card.Img variant="top" src={item.image} />
 					<Card.Body>
@@ -40,7 +40,7 @@ export function Categories() {
 						<Button variant="primary">Go somewhere</Button>
 					</Card.Body>
 				</Card>
-			</Container>
+			</Col>
 		);
 	});
 
@@ -135,7 +135,9 @@ export function Categories() {
 						<a href="make/z">Z</a>
 					</h5>
 				</Container>
-				{theCarData}
+				<Container>
+					<Row>{theCarData}</Row>
+				</Container>
 			</Row>
 		</Col>
 	);
